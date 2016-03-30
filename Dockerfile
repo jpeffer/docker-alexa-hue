@@ -13,7 +13,7 @@ RUN mkdir -p /usr/local/www && \
     cd Alexa-Hue && \
     /bin/bash -l -c "bundle install;"
 
+ENV RACK_ENV production
 EXPOSE 4567
 WORKDIR /usr/local/www/Alexa-Hue
 ENTRYPOINT /bin/bash -l -c "ruby app.rb"
-
