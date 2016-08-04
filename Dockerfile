@@ -15,5 +15,6 @@ RUN mkdir -p /usr/local/www && \
 
 EXPOSE 4567
 WORKDIR /usr/local/www/Alexa-Hue
-ENTRYPOINT /bin/bash -l -c "ruby app.rb"
-
+ADD run-alexa-hue .
+RUN chmod 755 ./run-alexa-hue
+ENTRYPOINT /bin/bash -l -c "./run-alexa-hue"
